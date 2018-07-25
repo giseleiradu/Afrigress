@@ -1,0 +1,679 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!DOCTYPE html>
+<html class=''>
+
+<head>
+  <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+  <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+  <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+  <meta charset='UTF-8'>
+  <meta name="robots" content="noindex">
+  <link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico"
+  />
+  <link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg"
+    color="#111" />
+  <link rel="canonical" href="https://codepen.io/suez/pen/OjGQza?depth=everything&limit=all&order=popularity&page=59&q=icon&show_forks=false"
+  />
+
+
+  <style class="cp-pen-styles">
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', Helvetica, Arial, sans-serif;
+      background: #000;
+    }
+
+    .slider {
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .slider__top-heading {
+      z-index: 12;
+      position: absolute;
+      left: 0;
+      top: 100px;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      -webkit-transition: all 0.5s 1s;
+      transition: all 0.5s 1s;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      opa: 0;
+    }
+
+    .slider.s--ready .slider__top-heading {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .slider__slides {
+      position: relative;
+      height: 100%;
+    }
+
+    .slider__slide {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .slider__slide.s--active {
+      pointer-events: auto;
+    }
+
+    .slider__slide-content {
+      z-index: 6;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      height: 100%;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .slider__slide-subheading {
+      margin-bottom: 20px;
+      font-size: 24px;
+      letter-spacing: 2px;
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+      opacity: 0;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+
+    .slider__slide.s--active .slider__slide-subheading {
+      -webkit-transition-delay: 0.65s;
+      transition-delay: 0.65s;
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    .slider__slide-heading {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 20px;
+      font-size: 60px;
+      letter-spacing: 12px;
+    }
+
+    .slider__slide-heading span {
+      display: block;
+      opacity: 0;
+      -webkit-transform: translateY(-60px);
+      transform: translateY(-60px);
+      -webkit-transition: all 0.33333s;
+      transition: all 0.33333s;
+    }
+
+    .slider__slide.s--prev .slider__slide-heading span {
+      -webkit-transform: translateY(60px);
+      transform: translateY(60px);
+    }
+
+    .slider__slide.s--active .slider__slide-heading span {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    .slider__slide-heading span:nth-child(1) {
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+
+    .slider__slide.s--active .slider__slide-heading span:nth-child(1) {
+      -webkit-transition-delay: 0.33333s;
+      transition-delay: 0.33333s;
+    }
+
+    .slider__slide-heading span:nth-child(2) {
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+    }
+
+    .slider__slide.s--active .slider__slide-heading span:nth-child(2) {
+      -webkit-transition-delay: 0.43333s;
+      transition-delay: 0.43333s;
+    }
+
+    .slider__slide-heading span:nth-child(3) {
+      -webkit-transition-delay: 0.2s;
+      transition-delay: 0.2s;
+    }
+
+    .slider__slide.s--active .slider__slide-heading span:nth-child(3) {
+      -webkit-transition-delay: 0.53333s;
+      transition-delay: 0.53333s;
+    }
+
+    .slider__slide-heading span:nth-child(4) {
+      -webkit-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+    }
+
+    .slider__slide.s--active .slider__slide-heading span:nth-child(4) {
+      -webkit-transition-delay: 0.63333s;
+      transition-delay: 0.63333s;
+    }
+
+    .slider__slide-heading span:nth-child(5) {
+      -webkit-transition-delay: 0.4s;
+      transition-delay: 0.4s;
+    }
+
+    .slider__slide.s--active .slider__slide-heading span:nth-child(5) {
+      -webkit-transition-delay: 0.73333s;
+      transition-delay: 0.73333s;
+    }
+
+    .slider__slide-heading span:nth-child(6) {
+      -webkit-transition-delay: 0.5s;
+      transition-delay: 0.5s;
+    }
+
+    .slider__slide.s--active .slider__slide-heading span:nth-child(6) {
+      -webkit-transition-delay: 0.83333s;
+      transition-delay: 0.83333s;
+    }
+
+    .slider__slide-heading span:nth-child(n+7) {
+      -webkit-transition-delay: 0.6s;
+      transition-delay: 0.6s;
+    }
+
+    .slider__slide.s--active .slider__slide-heading span:nth-child(n+7) {
+      -webkit-transition-delay: 0.93333s;
+      transition-delay: 0.93333s;
+    }
+
+    .slider__slide-readmore {
+      position: relative;
+      font-size: 14px;
+      text-transform: lowercase;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+      cursor: pointer;
+      opacity: 0;
+      -webkit-transition: 0.5s;
+      transition: 0.5s;
+    }
+
+    .slider__slide.s--active .slider__slide-readmore {
+      -webkit-transition-delay: 0.65s;
+      transition-delay: 0.65s;
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    .slider__slide-readmore:before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -3px;
+      width: calc(100% + 4px);
+      height: calc(100% + 6px);
+      background: rgba(255, 255, 255, 0.4);
+      -webkit-transform: scaleX(0.3);
+      transform: scaleX(0.3);
+      -webkit-transform-origin: 0 50%;
+      transform-origin: 0 50%;
+      -webkit-transition: -webkit-transform 0.3s;
+      transition: -webkit-transform 0.3s;
+      transition: transform 0.3s;
+      transition: transform 0.3s, -webkit-transform 0.3s;
+    }
+
+    .slider__slide-readmore:hover:before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+
+    .slider__slide-parts {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slider__slide-parts:after {
+      content: '';
+      z-index: 5;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .slider__slide-part {
+      position: relative;
+      width: 25%;
+      height: 100%;
+    }
+
+    .slider__slide-part-inner {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-size: 0 0;
+      background-repeat: no-repeat;
+      -webkit-transition: -webkit-transform 0.5s ease-in-out;
+      transition: -webkit-transform 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out;
+      transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    }
+
+    .slider__slide-part-inner:before {
+      content: '';
+      position: absolute;
+      width: 100vw;
+      height: 100%;
+      background-image: inherit;
+      background-size: cover;
+      background-position: center center;
+      -webkit-transition: opacity 0.25s;
+      transition: opacity 0.25s;
+      opacity: 0;
+    }
+
+    .slider__slide-part:nth-child(1) .slider__slide-part-inner {
+      z-index: 3;
+      -webkit-transition-delay: 0.24s;
+      transition-delay: 0.24s;
+      -webkit-transform: translateX(-32.5%);
+      transform: translateX(-32.5%);
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(1) .slider__slide-part-inner {
+      -webkit-transition-delay: 0.28s;
+      transition-delay: 0.28s;
+    }
+
+    .slider__slide-part:nth-child(1) .slider__slide-part-inner:before {
+      left: 0vw;
+      -webkit-transition-delay: 0.365s;
+      transition-delay: 0.365s;
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(1) .slider__slide-part-inner:before {
+      -webkit-transition-delay: 0.28s;
+      transition-delay: 0.28s;
+    }
+
+    .slider__slide-part:nth-child(2) .slider__slide-part-inner {
+      z-index: 2;
+      -webkit-transition-delay: 0.16s;
+      transition-delay: 0.16s;
+      -webkit-transform: translateX(-65%);
+      transform: translateX(-65%);
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(2) .slider__slide-part-inner {
+      -webkit-transition-delay: 0.36s;
+      transition-delay: 0.36s;
+    }
+
+    .slider__slide-part:nth-child(2) .slider__slide-part-inner:before {
+      left: -25vw;
+      -webkit-transition-delay: 0.285s;
+      transition-delay: 0.285s;
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(2) .slider__slide-part-inner:before {
+      -webkit-transition-delay: 0.36s;
+      transition-delay: 0.36s;
+    }
+
+    .slider__slide-part:nth-child(3) .slider__slide-part-inner {
+      z-index: 1;
+      -webkit-transition-delay: 0.08s;
+      transition-delay: 0.08s;
+      -webkit-transform: translateX(-97.5%);
+      transform: translateX(-97.5%);
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(3) .slider__slide-part-inner {
+      -webkit-transition-delay: 0.44s;
+      transition-delay: 0.44s;
+    }
+
+    .slider__slide-part:nth-child(3) .slider__slide-part-inner:before {
+      left: -50vw;
+      -webkit-transition-delay: 0.205s;
+      transition-delay: 0.205s;
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(3) .slider__slide-part-inner:before {
+      -webkit-transition-delay: 0.44s;
+      transition-delay: 0.44s;
+    }
+
+    .slider__slide-part:nth-child(4) .slider__slide-part-inner {
+      z-index: 0;
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+      -webkit-transform: translateX(-130%);
+      transform: translateX(-130%);
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(4) .slider__slide-part-inner {
+      -webkit-transition-delay: 0.52s;
+      transition-delay: 0.52s;
+    }
+
+    .slider__slide-part:nth-child(4) .slider__slide-part-inner:before {
+      left: -75vw;
+      -webkit-transition-delay: 0.125s;
+      transition-delay: 0.125s;
+    }
+
+    .slider__slide.s--active .slider__slide-part:nth-child(4) .slider__slide-part-inner:before {
+      -webkit-transition-delay: 0.52s;
+      transition-delay: 0.52s;
+    }
+
+    .slider__slide.s--active .slider__slide-part-inner {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      -webkit-transition-timing-function: ease;
+      transition-timing-function: ease;
+    }
+
+    .slider__slide.s--active .slider__slide-part-inner:before {
+      opacity: 1;
+    }
+
+    .slider__control {
+      z-index: 100;
+      position: absolute;
+      left: 50px;
+      top: 50%;
+      width: 50px;
+      height: 50px;
+      margin-top: -25px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      -webkit-transform: translateX(-50px);
+      transform: translateX(-50px);
+      opacity: 0;
+      -webkit-transition: all 0.5s 1s;
+      transition: all 0.5s 1s;
+      cursor: pointer;
+    }
+
+    .slider__control:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      margin-left: -10px;
+      margin-top: -10px;
+      border: 2px solid #000;
+      border-bottom: none;
+      border-right: none;
+      -webkit-transform: translateX(5px) rotate(-45deg);
+      transform: translateX(5px) rotate(-45deg);
+    }
+
+    .slider__control--right {
+      left: auto;
+      right: 50px;
+      -webkit-transform: translateX(50px);
+      transform: translateX(50px);
+    }
+
+    .slider__control--right:before {
+      -webkit-transform: translateX(-5px) rotate(135deg);
+      transform: translateX(-5px) rotate(135deg);
+    }
+
+    .slider.s--ready .slider__control {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .icon-link {
+      z-index: 100;
+      position: absolute;
+      left: 5px;
+      bottom: 5px;
+      width: 32px;
+    }
+
+    .icon-link img {
+      width: 100%;
+      vertical-align: top;
+    }
+
+    .icon-link--twitter {
+      left: auto;
+      right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.5/index.min.js'></script>
+  <script>'use strict';
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { 
+      if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+       } subClass.prototype = Object.create(superClass && superClass.prototype, {
+          constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });
+     if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; 
+     }
+
+    var carouselSlider = function (_React$Component) {
+      _inherits(carouselSlider, _React$Component);
+
+      function carouselSlider(props) {
+        _classCallCheck(this, carouselSlider);
+
+        var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+        _this.IMAGE_PARTS = 4;
+
+        _this.changeTO = null;
+        _this.AUTOCHANGE_TIME = 4000;
+
+        _this.state = { activeSlide: -1, prevSlide: -1, sliderReady: false };
+        return _this;
+      }
+
+      carouselSlider.prototype.componentWillUnmount = function componentWillUnmount() {
+        window.clearTimeout(this.changeTO);
+      };
+
+      carouselSlider.prototype.componentDidMount = function componentDidMount() {
+        var _this2 = this;
+
+        this.runAutochangeTO();
+        setTimeout(function () {
+          _this2.setState({ activeSlide: 0, sliderReady: true });
+        }, 0);
+      };
+
+      carouselSlider.prototype.runAutochangeTO = function runAutochangeTO() {
+        var _this3 = this;
+
+        this.changeTO = setTimeout(function () {
+          _this3.changeSlides(1);
+          _this3.runAutochangeTO();
+        }, this.AUTOCHANGE_TIME);
+      };
+
+      carouselSlider.prototype.changeSlides = function changeSlides(change) {
+        window.clearTimeout(this.changeTO);
+        var length = this.props.slides.length;
+
+        var prevSlide = this.state.activeSlide;
+        var activeSlide = prevSlide + change;
+        if (activeSlide < 0) activeSlide = length - 1;
+        if (activeSlide >= length) activeSlide = 0;
+        this.setState({ activeSlide: activeSlide, prevSlide: prevSlide });
+      };
+
+      carouselSlider.prototype.render = function render() {
+        var _this4 = this;
+
+        var _state = this.state;
+        var activeSlide = _state.activeSlide;
+        var prevSlide = _state.prevSlide;
+        var sliderReady = _state.sliderReady;
+
+        return React.createElement(
+          'div',
+          { className: classNames('slider', { 's--ready': sliderReady }) },
+
+          React.createElement(
+            'div',
+            { className: 'slider__slides' },
+            this.props.slides.map(function (slide, index) {
+              return React.createElement(
+                'div',
+                {
+                  className: classNames('slider__slide', { 's--active': activeSlide === index, 's--prev': prevSlide === index }),
+                  key: slide.text2
+                },
+                React.createElement(
+                  'div',
+                  { className: 'slider__slide-content' },
+                  React.createElement(
+                    'h3',
+                    { className: 'slider__slide-subheading' },
+                    slide.text1
+                  ),
+                  React.createElement(
+                    'h2',
+                    { className: 'slider__slide-heading' },
+                    slide.text2.split('').map(function (l) {
+                      return React.createElement(
+                        'span',
+                        null,
+                        l
+                      );
+                    })
+                  ),
+                  React.createElement(
+                    'h3',
+                    { className: 'slider__slide-subheading' },
+                    slide.text3
+                  ),
+                  React.createElement(
+                    'p',
+                    { className: 'slider__slide-readmore' },
+                    'read more'
+                  )
+                ),
+                React.createElement(
+                  'div',
+                  { className: 'slider__slide-parts' },
+                  [].concat(Array(_this4.IMAGE_PARTS).fill()).map(function (x, i) {
+                    return React.createElement(
+                      'div',
+                      { className: 'slider__slide-part', key: i },
+                      React.createElement('div', { className: 'slider__slide-part-inner', style: { backgroundImage: 'url(' + slide.img + ')' } })
+                    );
+                  })
+                )
+              );
+            })
+          ),
+          React.createElement('div', {
+            className: 'slider__control', onClick: function onClick() {
+              return _this4.changeSlides(-1);
+            }
+          }),
+          React.createElement('div', {
+            className: 'slider__control slider__control--right', onClick: function onClick() {
+              return _this4.changeSlides(1);
+            }
+          })
+        );
+      };
+
+      return carouselSlider;
+    }(React.Component);
+
+    var slides = [
+      {
+        text1: 'We Are',
+        text2: 'The AfriGress',
+        text3: 'We Make Brands Shine',
+        img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/paris.jpg'
+      }, {
+        text1: 'We Create Digital Experiences',
+        text2: 'That Build Motivation',
+        img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/singapore.jpg'
+      }, {
+        text1: 'Inspired By Purpose',
+        text2: 'Driven By Passion',
+        img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/prague.jpg'
+      }, {
+        text1: "You've Probably Noticed",
+        text2: 'We Love What We Do',
+        img: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/amsterdam.jpg'
+      }];
+
+    ReactDOM.render(React.createElement(carouselSlider, { slides: slides }), document.querySelector('#app'));
+//# sourceURL=pen.js
+  </script>
+</body>
+
+</html>

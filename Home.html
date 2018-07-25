@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AfriGress</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="/Style/main.css">
+    <script src="/JavaScript/main.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script>
+    <script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script>
+    <meta charset='UTF-8'>
+    <script>
+        function init() {
+            window.addEventListener('scroll', function (e) {
+                var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                    shrinkOn = 300,
+                    header = document.querySelector("header");
+                if (distanceY > shrinkOn) {
+                    classie.add(header, "smaller");
+                } else {
+                    if (classie.has(header, "smaller")) {
+                        classie.remove(header, "smaller");
+                    }
+                }
+            });
+        }
+        window.onload = init();
+
+// Add active class to the current button (highlight it)
+var header = document.getElementById("nav");
+var btns = header.getElementsByClassName("tbs");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+    </script>
+</head>
+
+<body>
+    <div>
+        <!--header-->
+
+
+        <header style="background-color: rgba(136, 153, 161, 0.4)">
+            <div class="container clearfix">
+                <h1 id="logo">
+                    AfriGress
+                </h1>
+                <nav>
+                    <a class="tbs" href="#home">Home</a>
+                    <a class="tbs" href="#services">Our Services</a>
+                    <a class="tbs" href="#about">About Us</a>
+                    <a class="tbs" href="#works">Our Works</a>
+                    <a class="tbs" href="#contact">Contact Us</a>
+                </nav>
+
+
+            </div>
+
+        </header>
+        <!--./header -->
+        <div id="home">
+            <iframe src="Carousel.html" width='100%' height='600px' style="border: none;"></iframe>
+        </div>
+        <!-- Services section -->
+        <div class="title container" id="services">
+            <h1>
+                Our Services
+            </h1>
+            <hr>
+            <p>
+                <b>WE TACKLE BUSINESS PROBLEMS</b> WITH INTELLIGENCE. WE USE CUTTING-EDGE TECH THINKING TO BRING
+                <b>BRANDS</b> TO LIFE ONLINE AND DIRECT CONSUMER BEHAVIOUR.
+            </p>
+        </div>
+        <!--Others-->
+
+
+        <div class="container">
+            <div class="row" style="display: -webkit-inline-box">
+                <div class="col-md-2 col-sm-3 col-xsx-3 service">
+                    <div class="serviceBox green">
+                        <div class="service-icon">
+                            <span>
+                                <i class="fa fa-globe"></i>
+                            </span>
+                        </div>
+                        <div class="service-content" style="padding-bottom: 91px">
+                            <h3 class="title">Web Development</h3>
+                            <p class="description">We develop and design amazing website and platforms for individuals and co-operation alike with
+                                quality design and good user experience.</p>
+                            <a href="#" class="read-more fa fa-plus" data-toggle="tooltip" title="Read More"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xsx-6 service">
+                    <div class="serviceBox orange">
+                        <div class="service-icon">
+                            <span>
+                                <i class="fa fa-tablet"></i>
+                            </span>
+                        </div>
+                        <div class="service-content" style="padding-bottom: 115px">
+                            <h3 class="title">Mobile App Devlopment</h3>
+                            <p class="description">We make various android and IOS apps platforms to fit company needs and specifications to give
+                                amazing user experience.</p>
+                            <a href="#" class="read-more fa fa-plus" data-toggle="tooltip" title="Read More"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xsx-6">
+                    <div class="serviceBox blue">
+                        <div class="service-icon">
+                            <span>
+                                <i class="fa fa-desktop"></i>
+                            </span>
+                        </div>
+                        <div class="service-content" style="padding-bottom: 25px">
+                            <h3 class="title">Software Development</h3>
+                            <p class="description">We develop system software such as education portals, CRM, ERP and custom based software which
+                                helps the community to address evolving social and business technology challenges</p>
+                            <a href="#" class="read-more fa fa-plus" data-toggle="tooltip" title="Read More"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="display: -webkit-inline-box">
+                <div class="col-md-3 col-sm-6 col-xsx-6 service">
+                    <div class="serviceBox blue">
+                        <div class="service-icon">
+                            <span>
+                                <i class="fa fa-paint-brush"></i>
+                            </span>
+                        </div>
+                        <div class="service-content" style="padding-bottom: 103.5px">
+                            <h3 class="title">Graphic Design</h3>
+                            <p class="description">We offer graphical applications services which are tailored to meet our client's needs. From
+                                logo design to magazines, brochures, photo branding, and other related graphics design work.
+                            </p>
+                            <a href="#" class="read-more fa fa-plus" data-toggle="tooltip" title="Read More"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xsx-6 service">
+                    <div class="serviceBox blue">
+                        <div class="service-icon">
+                            <span>
+                                <i class="fa fa-suitcase"></i>
+                            </span>
+                        </div>
+                        <div class="service-content" style="padding-bottom: 15px">
+                            <h3 class="title">Digital Marketing and Branding</h3>
+                            <p class="description">We offer digital solutions which help to define our clients and make them stand out and reach
+                                their audience in the digital space. We offer services such as SEO, online campaigns, social
+                                media marketing, creating company profiles, brand identity and related services.</p>
+                            <a href="#" class="read-more fa fa-plus" data-toggle="tooltip" title="Read More"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xsx-6 service">
+                    <div class="serviceBox blue">
+                        <div class="service-icon">
+                            <span>
+                                <i class="fa fa-phone"></i>
+                            </span>
+                        </div>
+                        <div class="service-content" style="padding-bottom: 111px">
+                            <h3 class="title">Analytics and Online Market Research</h3>
+                            <p class="description">We help our clients to visualize data from their business, draw insights and conducting online
+                                research which will help them to make smart decisions on their business challenges.</p>
+                            <a href="#" class="read-more fa fa-plus" data-toggle="tooltip" title="Read More"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- About Us section -->
+        <div>
+            <section id="what-we-do" id="about">
+                <div class="title container" id="about">
+                    <h1>
+                        About Us
+                    </h1>
+                    <hr>
+                    <p> WE CREATE EXPERIENCES THAT TRANSFORM
+                        <b>BRANDS</b>, GROW BUSINESSES AND MAKE PEOPLE'S LIVES BETTER. BUILDING BRANDS AND DRIVING SALES WITH
+                        <b>POWERFUL IDEAS</b> AND DIGITAL SOLUTIONS.
+                    </p>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="row mt-5 ">
+                                <div class="col-sm-6" style="float: left">
+                                    <div class="card">
+                                        <div class="card-block block-1">
+                                            <h3 class="card-title">We Are Creative</h3>
+                                            <p class="card-text">Crafting with love, from the bottom of our hearts</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6" style="float: left">
+                                    <div class="card">
+                                        <div class="card-block block-2">
+                                            <h3 class="card-title">We're Cool Nerds</h3>
+                                            <p class="card-text">Coding with fun, of wourse with lots of coffee</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" style="float: left">
+                                    <div class="card">
+                                        <div class="card-block block-3">
+                                            <h3 class="card-title">We Are Passionate</h3>
+                                            <p class="card-text">Availble when you need us, we are just one click/call away</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <img src="https://africaehub.com/hypnos/wp-content/uploads/2018/02/tech.jpg" alt="Image1" class="about-image" />
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="card-deck">
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" style="float: right">
+                                    <div class="card">
+                                        <div class="card-block block-4">
+                                            <h3 class="card-title">We're Young Professionals</h3>
+                                            <p class="card-text">We love what we do, and we do it very well</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" style="float: right">
+                                    <div class="card">
+                                        <div class="card-block block-5">
+                                            <h3 class="card-title">We Are Flexible</h3>
+                                            <p class="card-text">Addopting to change and unforeseen surprises</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" style="float: right">
+                                    <div class="card">
+                                        <div class="card-block block-6">
+                                            <h3 class="card-title">We Are Fun</h3>
+                                            <p class="card-text">You'll love working with us, all our clients do</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+        <!-- /About Us section -->
+
+        <div class="container ">
+            <div class="title" style="padding-bottom: 20px">
+                <h2>
+                    Our Mission
+                </h2>
+                <hr>
+                <p>
+
+                    <b>Empowering women's role</b> in transformating Africa's digital space, by becoming the leading brand in
+                    offering digital experiences that address evolving social and business challenges
+
+                </p>
+            </div>
+            <div class=" aList container">
+                <ul>
+                    <li>We are Technology Enthusiasts who can lend a helping hand</li>
+                    <li>The innovative and young thinking heads of our company provides most contemporary solutions</li>
+                    <li>We provide cost-effective, strategic and innovative solutions in a Africa where technology and business
+                        converge
+                    </li>
+                    <li>Listening to our client demands, understanding their needs is always a pleasure to us</li>
+                    <li>All our products are created with a point of view on all your needs and demands</li>
+                    <li>We make sure our clients are served with best available technical solutions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- /Services section -->
+        <!-- /team -->
+        <div class="container">
+            <div id="team">
+                <div class="title text-center clearfix">
+                    <h1>Our Team</h1>
+                    <hr>
+                    <p> We're a small, young, friendly and talented team. We craft beautiful digital solutions for awesome clients
+                        across all the platforms.
+                    </p>
+                </div>
+                <ul style="display: -webkit-inline-box">
+
+                    <!--team-1-->
+                    <li class="our-team-main"style="margin-right: 30px">
+
+
+                        <div class="team-front">
+                            <img src="http://placehold.it/110x110/336699/fff?text=Dilip" class="img-fluid" />
+                            <h3>Gisele Iradukunda</h3>
+                            <p>Web Designer</p>
+                        </div>
+
+                        <div class="team-back">
+                            <span>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
+                            </span>
+                        </div>
+
+                    </li>
+                    <!--./team-1-->
+
+                    <!--team-2-->
+                    <li class="our-team-main" style="margin-left: 30px">
+
+                        <div class="team-front">
+                            <img src="http://placehold.it/110x110/336699/fff?text=Dilip" class="img-fluid" />
+                            <h3>Dilip Kevat</h3>
+                            <p>Web D</p>
+                        </div>
+
+                        <div class="team-back">
+                            <span>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
+                            </span>
+                        </div>
+                    </li>
+                    <!--./team-2-->
+
+                </ul>
+                <ul style="display: -webkit-inline-box">
+                    <!--team-3-->
+                    <li class="our-team-main" style="margin-right: 30px">
+                        <div class="team-front">
+                            <img src="http://placehold.it/110x110/336699/fff?text=Dilip" class="img-fluid" />
+                            <h3>Gisele Iradukunda</h3>
+                            <p>Web Designer</p>
+                        </div>
+
+                        <div class="team-back">
+                            <span>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
+                            </span>
+                        </div>
+                    </li>
+                    <!--./team-3-->
+
+                    <!--team-4-->
+                    <li class="our-team-main" style="margin-left: 30px">
+                        <div class="team-front">
+                            <img src="http://placehold.it/110x110/336699/fff?text=Dilip" class="img-fluid" />
+                            <h3>Dilip Kevat</h3>
+                            <p>Web D</p>
+                        </div>
+
+                        <div class="team-back">
+                            <span>
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                                penatibus et magnis dis parturient montes, Lorem ipsum dolor sit amet, consectetuer adipiscing
+                                elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
+                            </span>
+                        </div>
+                    </li>
+                    <!--./team-4-->
+                </ul>
+            </div>
+            <!--./team-->
+
+        </div>
+
+
+        <!--Contact-->
+        <div id="contact">
+            <div class="about_our_company">
+                <h1>Contact</h1>
+                <div class="titleline-icon"></div>
+                <p>Let us work with you to create and an Online Strategy that Works!</p>
+            </div>
+            <div>
+                <div style=" width: 100%; margin-bottom: 40px">
+
+                    <div class="container">
+                        <div>
+                            <div class="bording" style="padding-bottom: 20px;">
+                                <input type="text" placeholder="Your Name *" required style="margin-right: 15px;" />
+                                <input type="text" placeholder="E-mail *" />
+                            </div>
+
+                            <textarea name="message" id="msg">
+
+                        </textarea>
+                        </div>
+                        <button type="submit" class="buton">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <!-- Footer -->
+    <div id="footer">
+        <div>
+            <div class="row cont container" style="display:-webkit-inline-flex">
+
+                <p>
+                    <strong>
+                        <i class="fa fa-map-marker"></i>Address
+                    </strong>
+                    <br/> Kigali, Rwanda
+                </p>
+                <p>
+                    <strong>
+                        <i class="fa fa-phone"></i> Phone Number
+                    </strong>
+                    <br> +230 571 02190
+                </p>
+                <p>
+                    <strong>
+                        <i class="fa fa-envelope"></i> Email Address
+                    </strong>
+                    <br> CONTACT@AFRIGRESS.ORG
+                </p>
+
+                <!-- 
+                <ul class="list-unstyled list-inline social text-center" style="text-align: center;">
+                    <!-- <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li> -->
+                <!-- <li class="list-inline-item">
+                        <a href="javascript:void();">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li> -->
+                <!-- <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="javascript:void();" target="_blank">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        </li> -->
+                </ul>
+            </div>
+        </div>
+        <div class=" text-center text-white" style="margin-top: 25px">
+            <!--<p><u><a href="https://www.nationaltransaction.com/">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>-->
+            <p class="h6">&copy 2018
+                <a class="text-green ml-2" href="#" target="_blank">AfriGress</a>
+            </p>
+        </div>
+    </div>
+    <!-- ./Footer -->
+</body>
+
+</html>
